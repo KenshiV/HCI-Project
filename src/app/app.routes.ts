@@ -6,8 +6,8 @@ import { inject } from '@angular/core';
 
 const auth:CanActivateFn = (route, state) => {
     const router = inject(Router);
-    // return true
-    return router.createUrlTree(['/home'])
+    return true
+    // return router.createUrlTree(['/maintenance'])
 }
 
 export const routes: Routes = [
