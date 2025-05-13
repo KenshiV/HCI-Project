@@ -1,0 +1,52 @@
+
+<div class="parent-container">
+  <h1>من نحــن؟</h1>
+
+  <app-video-player
+    [src]="
+      'https://res.cloudinary.com/dypplxusy/video/upload/v1746262736/j7blixfpkmwoaq6pidfb.mp4'
+    "
+  ></app-video-player>
+
+
+  <hr />
+  <div class="image-slider">
+    <img class="img" [id]="images.indexOf(selectedImage)" [src]="selectedImage" alt="" srcset="">
+    <div class="dots">
+      @for (image of images; track $index) {
+        <p (click)="setIndex($index)" class="dot" [ngClass]="{'active':$index == images.indexOf(selectedImage)}"></p>
+      }
+    </div>
+  </div>
+
+  <hr />
+  <app-video-player
+    [src]="
+      'https://res.cloudinary.com/dypplxusy/video/upload/v1746021760/hhkakvtmnhgwoq3doxkv.mp4'
+    "
+    [autoplay]="false"
+
+  ></app-video-player>
+
+
+  <hr />
+
+  <h1>تواصل معنا</h1>
+  <div class="contact-us">
+    <input
+      type="text"
+      name="fullName"
+      id="fullName"
+      placeholder="الإسم الكامل"
+    />
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="البريد الالكتروني"
+    />
+    <input type="text" name="phone" id="phone" placeholder="رقم الهاتف" />
+    <textarea placeholder="اكتب الينا"></textarea>
+  </div>
+  <button type="button">إرسال</button>
+</div>

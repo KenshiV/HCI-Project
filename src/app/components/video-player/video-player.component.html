@@ -1,0 +1,7 @@
+<div class="video-container" *ngIf="src" [style]="`border-radius:${borderRadius}`">
+  <video
+    #autoplayVideo
+    [src]="src"
+    controls
+    ></video>
+</div>

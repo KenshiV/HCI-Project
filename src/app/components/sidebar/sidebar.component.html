@@ -1,0 +1,21 @@
+<div class="parent-container"  [ngClass]="{'active':isActive}">
+
+    <div class="side-bar">
+        <p (click)="changePage({page:'home'})" class="side-bar-item">الرئيسية</p>
+        <p (click)="changePage({page:'category', category:'news'})" class="side-bar-item">الأخبار</p>
+        <p (click)="changePage({page:'category', category:'reports'})" class="side-bar-item">تقارير و تحقيقات</p>
+        <p (click)="changePage({page:'category', category:'infographic'})" class="side-bar-item">انفوجرافيك</p>
+        <p (click)="changePage({page:'category', category:'activities'})" class="side-bar-item">مبادرات وفعاليات</p>
+        <p (click)="changePage({page:'category', category:'podcasts'})" class="side-bar-item">بودكاست</p>
+        <p (click)="changePage({page:'category', category:'articals'})" class="side-bar-item">مقالات</p>
+        <p (click)="changePage({page:'about'})" class="side-bar-item">من نحن</p>
+    </div>
+
+
+    <div class="social-media">
+        <a href="https://www.facebook.com/share/19m58nMYar/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-btn facebook"><img src="./assets/icons/facebook.png" alt="" srcset=""></a>
+        <a href="https://www.instagram.com/ecomedia2025?igsh=MTVkajlwd3Q5M2tm&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-btn instagram"><img src="./assets/icons/instagram.png" alt="" srcset=""></a>
+        <a href="https://www.tiktok.com/@ecomedia3?_t=ZS-8uRZKtSImIc&amp;_r=1" target="_blank" rel="noopener noreferrer" class="social-btn tiktok"><img src="./assets/icons/tiktok.png" alt="" srcset=""></a>
+    </div>
+
+</div>

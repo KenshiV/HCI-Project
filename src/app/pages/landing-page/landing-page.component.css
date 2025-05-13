@@ -1,0 +1,124 @@
+@import url(../../../animations.css);
+.parent-container{
+    padding: 16px;
+    background-color: var(--background);
+    opacity: 1;
+    position: relative;
+    left: 0;
+    /* animation: rtlAnimation 1s ease-in-out; */
+}
+
+.content-wrapper {
+    width: 100%;
+    height: 100%;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-one {
+    display: grid;
+    grid-template-columns: calc(30% - 16px) 70%;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.trending {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.trending span {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.trending span app-card-one{
+    height: 50%;
+}
+
+.trending-title {
+    background-color: var(--primary);
+    height: 35px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: var(--FF-Rubik);
+    font-weight: 600;
+    text-align: center;
+}
+
+.section-Two {
+    display: grid;
+    grid-template-columns: calc(25% - 16px) 75%;
+    width: 100%;
+    gap: 16px;
+}
+
+.top-stories {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+}
+
+.news-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-title{
+    width: 100%;
+    text-align: left;
+    font-family: var(--FF-OpenSans);
+    font-weight: 600;
+    font-size: 14;
+    padding: 32px 0 16px 0;
+    border-top: 1px solid var(--accent);
+}
+
+@media screen AND (max-width: 900px){
+    .top-stories {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .section-one {
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr 100%;
+    }
+
+    .trending span{
+        flex-direction: row;
+    }
+
+    .trending {
+        grid-row: -1 / -2;
+    }
+}
+
+@media screen AND (max-width: 600px){
+    .top-stories {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .trending span{
+        flex-direction: column;
+    }
+
+    .section-Two {
+        grid-template-columns: 1fr;
+    }
+
+    .news-section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .trending span app-card-one{
+        height: 200px;
+    }
+}

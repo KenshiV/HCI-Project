@@ -1,0 +1,17 @@
+<!-- <div #video class="aboutus" *ngIf="!skipV">
+    <button type="button" (click)="unmute()" >تفعيل الصوت</button>
+    <app-video-player [borderRadius]="'0px'" [unmute]="muted" [init]="true" [src]="'https://res.cloudinary.com/dypplxusy/video/upload/v1745940722/qni0lfxithnnsi49anvs.mp4'"></app-video-player>
+    <button [disabled]="counter>0" type="button" (click)="skipVid()">تخطي بعد {{counter}} ثانية</button>
+</div> -->
+
+<div #parent class="parent-container">
+    <app-header (isActiveEmmiter)="isSideBarActive=$event"></app-header>
+    <div class="content-wrapper">
+        <app-landing-page *ngIf="currentPage.page=='home'"></app-landing-page>
+        <app-category-page *ngIf="currentPage.page=='category'"></app-category-page>
+        <app-blog-page *ngIf="currentPage.page=='blog'"></app-blog-page>
+        <app-aboutus *ngIf="currentPage.page=='about'"></app-aboutus>
+    </div>
+    <app-footer></app-footer>
+    <app-sidebar [isActive]="isSideBarActive" (currentPage)="currentPage = $event"></app-sidebar>
+</div>

@@ -1,0 +1,27 @@
+
+<div class="parent-container">
+    <div class="section-one">
+        <div class="trending">
+            <p class="trending-title">رائج حالياً</p>
+           <span>
+            <app-card-one *ngIf="newsData.length>1" [data]="newsData[1]" (click)="displayDetailes({type:'news',data:newsData[1]})"></app-card-one>
+            <app-card-one *ngIf="newsData.length>2" [data]="newsData[2]" (click)="displayDetailes({type:'news',data:newsData[2]})"></app-card-one>
+           </span>
+        </div>
+        <span>
+            <app-card-one *ngIf="newsData.length>0" [data]="newsData[0]" (click)="displayDetailes({type:'news',data:newsData[0]})"></app-card-one>
+        </span>
+    </div>
+    <p class="section-title">TOP STORIES</p>
+    <div class="section-Two">
+        <div class="news-section">
+            <app-news-card ></app-news-card>
+            <app-news-card [type]="2"></app-news-card>
+        </div>
+        <div class="top-stories">
+            @for(news of newsData; track $index) {
+                <app-card-two [data]="news" (click)="displayDetailes({type:'news',data:news})"></app-card-two>
+            }
+        </div>
+    </div>
+</div>

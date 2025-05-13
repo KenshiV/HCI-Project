@@ -1,0 +1,220 @@
+<div class="parent-container">
+  <div class="actions">
+    <div class="filters">
+      <button
+        (click)="changeCategory('articals')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'articals' }"
+      >
+        <p>مقالات</p>
+      </button>
+      <button
+        (click)="changeCategory('podcasts')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'podcasts' }"
+      >
+        <p>بودكاست</p>
+      </button>
+      <button
+        (click)="changeCategory('activities')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'activities' }"
+      >
+        <p>مبادرات</p>
+      </button>
+      <!-- <button (click)="changeCategory('videos')" type="button" class="filterBtn" [ngClass]="{'active':category=='videos'}"><p>فيديوهات</p></button> -->
+      <button
+        (click)="changeCategory('infographic')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'infographic' }"
+      >
+        <p>إنفوجرافيك</p>
+      </button>
+      <button
+        (click)="changeCategory('reports')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'reports' }"
+      >
+        <p>تقارير</p>
+      </button>
+      <button
+        (click)="changeCategory('news')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'news' }"
+      >
+        <p>الأخبار</p>
+      </button>
+    </div>
+    <div class="searchBox">
+      <input
+        type="text"
+        name="searchBox"
+        id="searchBox"
+        placeholder="إبحث ... "
+      />
+      <span class="material-symbols-rounded"> search </span>
+    </div>
+  </div>
+  <p class="section-title-2">
+    @if (category == "news") {
+      TOP NEWS
+    }
+    @else if (category == "articals") {
+      TOP ARTICAL
+    }
+    @else if (category == "infographic") {
+      TOP INFOGRAPHIC
+    }
+    @else if (category == "reports") {
+      TOP REPORT
+    }
+    @else if (category == "activities") {
+      TOP INITIATIVE
+    }    
+    @else if (category == "podcasts") {
+      TOP PODCAST
+    } 
+  </p>
+  <div class="section-one">
+    <div class="trending">
+      <div class="news-section">
+        <div class="brife">
+          <p class="title">{{ setTitle(category) }}</p>
+          <p class="body">
+            احصل علي الأحدث في أزمة المناخ، والتلوث، والكوارث الطبيعية، وجهود
+            الحفظ، والمزيد من الأخبار البيئية.
+          </p>
+        </div>
+        <app-news-card></app-news-card>
+        <app-news-card [type]="2"></app-news-card>
+      </div>
+    </div>
+    <span>
+      @if (category == 'news') {
+      <app-card-one
+        [data]="newsData.news[0]"
+        (click)="displayDetailes({ type: 'news', data: newsData.news[0] })"
+      ></app-card-one>
+
+      } @else if (category == 'articals') {
+      <app-card-one
+        [data]="newsData.articals[1]"
+        (click)="
+          displayDetailes({ type: 'articals', data: newsData.articals[1] })
+        "
+      ></app-card-one>
+
+      } @else if (category == 'infographic') {
+      <app-card-one
+        [data]="newsData.infographics[1]"
+        (click)="
+          displayDetailes({
+            type: 'infographic',
+            data: newsData.infographics[1]
+          })
+        "
+      ></app-card-one>
+
+      } @else if (category == 'reports') {
+      <app-card-one
+        [data]="newsData.reports[0]"
+        (click)="
+          displayDetailes({ type: 'reports', data: newsData.reports[0] })
+        "
+      ></app-card-one>
+
+      } @else if (category == 'activities') {
+        <app-card-one
+          [data]="newsData.activities[0]"
+          (click)="
+            displayDetailes({ type: 'activities', data: newsData.activities[0] })
+          "
+        ></app-card-one>
+  
+        }@else if (category == 'podcasts') {
+          <app-card-one
+            [data]="newsData.podcasts[0]"
+            (click)="
+              displayDetailes({ type: 'podcasts', data: newsData.podcasts[0] })
+            "
+          ></app-card-one>
+    
+          }@else {
+      <div class="spacer">لا يوجد بيانات لعرضها حاليا</div>
+      }
+    </span>
+  </div>
+  <p class="section-title">
+    @if (category == "news") {
+      ALL NEWS
+    }
+    @else if (category == "articals") {
+      ALL ARTICALS
+    }
+    @else if (category == "infographic") {
+      ALL INFOGRAPHICS
+    }
+    @else if (category == "reports") {
+      ALL REPORTS
+    }
+    @else if (category == "activities") {
+      ALL INITIATIVES
+    }    
+    @else if (category == "podcast") {
+      ALL PODCASTS
+    }    
+  </p>
+  <div class="section-Two">
+    <div class="top-stories">
+      @if (category == "news") { @for (object of newsData.news; track $index) {
+      <app-card-two
+        [data]="object"
+        (click)="displayDetailes({ type: 'news', data: object })"
+      ></app-card-two>
+      } } @else if (category == "articals") { @for (object of newsData.articals;
+      track $index) {
+      <app-card-two
+        category="{{ setTitle(category) }}"
+        [data]="object"
+        (click)="displayDetailes({ type: 'articals', data: object })"
+      ></app-card-two>
+      } } @else if (category == "infographic") { @for (object of
+      newsData.infographics; track $index) {
+      <app-card-two
+        category="{{ setTitle(category) }}"
+        [data]="object"
+        (click)="displayDetailes({ type: 'infographic', data: object })"
+      ></app-card-two>
+      } } @else if (category == "reports") { @for (object of newsData.reports;
+      track $index) {
+      <app-card-two
+        category="{{ setTitle(category) }}"
+        [data]="object"
+        (click)="displayDetailes({ type: 'reports', data: object })"
+      ></app-card-two>
+      } }@else if (category == "activities") { @for (object of newsData.activities;
+        track $index) {
+        <app-card-two
+          category="{{ setTitle(category) }}"
+          [data]="object"
+          (click)="displayDetailes({ type: 'activities', data: object })"
+        ></app-card-two>
+        } }@else if (category == "podcasts") { @for (object of newsData.podcasts;
+          track $index) {
+          <app-card-two
+            category="{{ setTitle(category) }}"
+            [data]="object"
+            (click)="displayDetailes({ type: 'podcasts', data: object })"
+          ></app-card-two>
+          } }@else {
+      <div class="spacer">لا يوجد بيانات لعرضها حاليا</div>
+      }
+    </div>
+  </div>
+</div>

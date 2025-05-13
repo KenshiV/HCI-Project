@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root {
+    --primary: #45D26D;
+    --secondary: #89EEA6;
+    --accent: #56F483;
+    --background: #F5FBF7;
+    --font-color: #070E09;
+
+
+    --FF-Rubik: "Rubik", sans-serif;
+    --FF-Belanosima: "Belanosima", sans-serif;
+    --FF-OpenSans: "Open Sans", sans-serif;
+    --FF-Cairo: "Cairo", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+}
+
+body{
+    overflow: hidden;
+    height: 100vh;
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--accent);
+}
+
+button.active {
+    background-color: var(--accent);
+}
+
+.parent-container{
+    background-color: var(--background);
+}
+

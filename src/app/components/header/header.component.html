@@ -1,0 +1,26 @@
+<header class="header">
+    <button type="button" class="side-toggler" [ngClass]="{'active':isActive}" (click)="sidebarToggler()">
+        <span class="material-symbols-rounded">
+            menu
+            </span>
+    </button>
+
+    <div class="logo">
+        <div class="img-container">
+            <img src="/assets/Logo.png" alt="" srcset="">
+            <p class="title">
+                <span>eco</span>
+                <span>MEDIA</span>
+            </p>
+        </div>
+        <div class="suptitle">
+            <p>معاً لمستقبل <b>أخضـــر</b></p>
+        </div>
+    </div>
+    
+    <button type="button" class="go-back" (click)="goBack()">
+        <span class="material-symbols-rounded">
+            arrow_back_ios
+            </span>
+    </button>
+</header>

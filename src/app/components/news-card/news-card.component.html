@@ -1,0 +1,20 @@
+<div class="parent-container" [ngClass]="{'one':type==1,'two':type==2}">
+    <p class="title">
+        @if (type == 1) {
+            {{data.one.title}}
+        } 
+        @else {
+            {{data.two.title}}
+        }
+    </p>
+    <p class="body">
+        @if (type == 1) {
+            {{data.one.body}}
+        } 
+        @else {
+            {{data.two.body}}
+        }
+    </p>
+    <button *ngIf="type == 1" type="button" class="subscripe">اشترك</button>
+    <p *ngIf="type == 2" class="slog">{{data.two.slog}}</p>
+</div>

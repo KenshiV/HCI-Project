@@ -1,0 +1,242 @@
+@import url(../../../animations.css);
+.parent-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 16px ;
+    min-height: calc(100vh - 300px);
+    /* opacity: 1; */
+    position: relative;
+    right: 0;
+    animation: rtlAnimation 1s ease-in-out;
+}
+
+.title {
+    font-family: var(--FF-Rubik);
+    color: var(--font-color);
+    font-weight: 700;
+    font-size: 24px;
+    padding: 32px 0 0 0;
+}
+
+.share-tip {
+    background-color: var(--secondary);
+    padding: 8px 16px;
+    font-size: 12px;
+    font-family: var(--FF-Rubik);
+    width: fit-content;
+    border-radius: 8px;
+    margin: 32px 0;
+}
+
+.imgs-list {
+   width: 90%;
+   height: fit-content;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   gap: 24px;
+   margin: auto;
+}
+
+.img {
+   height: 100%;
+   overflow: hidden;
+   text-align: center;
+   background-color: var(--background);
+}
+
+.img-container{
+    width: fit-content;
+    height: 100%;
+    max-height: 500px;
+    border-radius: 8px;
+    margin: auto;
+    overflow: hidden;
+   background-color: rgba(128, 128, 128, 0.15);
+
+}
+
+.img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+hr {
+    height: 3px;
+    width: 90%;
+    align-self: center;
+    background-color: var(--accent);
+    margin: 32px;
+}
+
+.paragraoph {
+    width: 90%;
+    align-self: center;
+    font-family: var(--FF-Cairo);
+    font-weight: 600;
+    padding: 16px 0;
+}
+
+.paragraoph.sub-title {
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.paragraoph.sub-title.p-head {
+    margin-top: 0;
+    padding-bottom: 8px;
+    font-weight: 600;
+    font-size: 17px;
+    color: gray;
+    text-decoration:underline;
+}
+
+.paragraoph.p-tap.sub-title {
+    margin-top: 0;
+    width: 90%;
+    align-self: center;
+    font-family: var(--FF-Cairo);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 4px 0;
+    padding-right: 32px;
+    color: var(--font-color);
+}
+
+.paragraoph.p-tap {
+    width: 90%;
+    align-self: center;
+    font-family: var(--FF-Cairo);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 4px 0;
+    padding-right: 32px;
+    color: var(--font-color);
+}
+
+
+.writer{
+    color: var(--primary);
+    margin: auto;
+    width: 90%;
+    font-family: var(--FF-Rubik);
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    top: -16px;
+}
+
+.writer span{
+
+    font-size: 20px;
+}
+
+.img-footer{
+    font-family: var(--FF-Rubik);
+    font-size: 16px;
+    padding: 8px;
+    color: rgba(128, 128, 128, 0.85);
+}
+
+.paragraoph.p-head {
+    font-weight: 600;
+    font-size: 17px;
+    color: gray;
+    text-decoration:underline;
+}
+
+.infograph-container {
+    max-width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.infograph-container img {
+    width: 100%;
+    height: 98%;
+}
+
+.video {
+    padding: 16px;
+}
+
+.video hr {
+    width: 100%;
+    margin: 16px auto;
+    height: 2px;
+}
+
+.video .description {
+    margin-top: 16px;
+    font-family: var(--FF-Cairo);
+    font-weight: 600;
+
+}
+
+.image-slider {
+    height: 100%;
+    width: calc(100% - 32px);
+    margin: 32px 16px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-slider .img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: fill;
+    border-radius: 16px;
+    opacity: 1;
+    animation: all 0.3s ease-in-out;
+}
+
+.image-slider img.active {
+    width: 100%;
+    object-fit: fill;
+}
+
+
+.dots {
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+}
+
+.dot{
+    width: 24px;
+    height: 24px;
+    border-radius: 25%;
+    background-color: gray;
+    cursor: pointer;
+    font-family: var(--FF-Cairo);
+    font-size: 12px;
+    color: var(--background);
+    text-align: center;
+}
+
+.dot.active {
+    width: 24px;
+    height: 24px;
+    border-radius: 25%;
+    border-radius: 50%;
+    background-color: var(--primary);
+}

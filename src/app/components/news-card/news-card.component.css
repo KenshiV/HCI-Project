@@ -1,0 +1,48 @@
+.parent-container {
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    border: 1px solid var(--secondary);
+    padding: 16px;
+    background-color: var(--background);
+}
+
+.title {
+    font-family: var(--FF-Rubik);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.body {
+    font-family: var(--FF-Rubik);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.subscripe {
+    width: 120px;
+    height: 32px;
+    margin-top: 32px;
+    background-color: var(--primary);
+    font-family: var(--FF-Rubik);
+}
+
+.parent-container.one {
+    display: none;
+    background-color: var(--secondary);
+}
+
+.parent-container.two {
+    background-color: var(--secondary);
+}
+
+.slog{
+    font-weight: 600;
+    font-family: var(--FF-Rubik);
+    color: #2E7D57;
+}

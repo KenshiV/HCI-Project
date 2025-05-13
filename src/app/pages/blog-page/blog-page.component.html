@@ -1,0 +1,100 @@
+<div class="parent-container" >
+  @if (category == 'news' || category == 'articals' || category == 'reports') {
+    @if(data.video) {
+      <div class="video">
+        <div class="title">{{data.title}}</div>  
+      <hr>
+      <div class="video-container">
+        <app-video-player [src]="data.video"></app-video-player>
+      </div>
+      <hr>
+      <p class="description">{{data.desription}}</p>
+      </div>
+    } 
+    @else {
+      <p class="title">{{data.title}}</p>
+      <div class="share">
+        <p class="share-tip">شارك المقال</p>
+      </div>
+      <div class="imgs-list">
+       <div class="img">
+        <div class="img-container">
+          <img [src]="data.img" alt="" />
+        </div>
+        <p class="img-footer" *ngIf="data.imgFooter">- {{data.imgFooter}}</p>
+       </div>
+       @if (data.img2) {
+        <div class="img">
+          <div class="img-container">
+            <img [src]="data.img2" alt="" />
+          </div>
+          <p class="img-footer" *ngIf="data.imgFooter">- {{data.imgFooter}}</p>
+         </div>
+       }
+      </div>
+      <hr />
+      @for(key of objectKeys(data.content); track $index){
+        @if (key.includes('img')) {
+          <div class="imgs-list">
+            <div class="img">
+             <div class="img-container">
+               <img [src]="data.content[key]" alt="" />
+             </div>
+            </div>
+           </div>
+        }
+        @else {
+          <p class="paragraoph" [ngClass]="{'p-tap': key.includes('pt'),'sub-title': key.includes('t'), 'p-head': key.includes('s')}">
+            {{data.content[key]}}
+          </p>
+        }
+      }
+      <hr />
+      <div class="writer" *ngIf="data.writer">
+        <span class="material-symbols-rounded">
+          edit
+          </span>
+          <p >كتب: {{data.writer}}</p>
+      </div>
+      <div class="writer" *ngIf="data.interviewer || data.interviewers">
+        <span class="material-symbols-rounded">
+          speech_to_text
+          </span>
+          <p *ngIf="data.interviewers">كتبن: {{data.interviewers}}</p>
+          <p *ngIf="data.interviewer">كتب: {{data.interviewer}}</p>
+      </div>
+    }
+  }
+  @else if (category == 'infographic') {
+    <!-- <p class="title">{{data.title}}</p> -->
+    <div class="infograph-container">
+      <img [src]="data.img" alt="" srcset="">
+    </div>
+  } 
+  @else if (category == 'activities' || category=='podcasts') {
+    @if (data.type) {
+      <div class="title">{{data.title}}</div>  
+      <hr>
+      <div class="image-slider">
+        <img class="img" [id]="images.indexOf(selectedImage)" [src]="selectedImage" alt="" srcset="">
+        <div class="dots">
+          @for (image of images; track $index) {
+            <p (click)="setIndex($index)" class="dot" [ngClass]="{'active':$index == images.indexOf(selectedImage)}">{{$index + 1}}</p>
+          }
+        </div>
+      </div>
+    }
+    @else {
+      <div class="video">
+        <div class="title">{{data.title}}</div>  
+      <hr>
+      <div class="video-container">
+        <app-video-player [src]="data.video"></app-video-player>
+      </div>
+      <hr>
+      <p class="description">{{data.desription}}</p>
+      </div>
+    }
+  }
+</div>
+
